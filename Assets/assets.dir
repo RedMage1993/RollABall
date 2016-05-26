@@ -1,0 +1,8 @@
+This is a temporary file meant to include
+the Assets folder in the tracked files for Git.
+
+Unity3D does not recognize the project folder as a
+valid project without the Assets folder.
+
+Delete this file <assets.dir> upon adding other
+files in the Assets folder.
