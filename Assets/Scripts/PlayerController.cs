@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     //}
 
+	public float speed;
+
 	private Rigidbody rb;
 
 	// Called on first frame of script
@@ -33,6 +35,6 @@ public class PlayerController : MonoBehaviour
 
         // Use Input to apply force to rigidbody of Player
 		Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-		rb.AddForce(movement);
+		rb.AddForce(movement * speed);
     }
 }
