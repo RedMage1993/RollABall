@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
 
     //}
 
+	private Rigidbody rb;
+
+	// Called on first frame of script
+	void Start()
+	{
+		rb = GetComponent<Rigidbody> (); // Finds Rigidbody component if present
+	}
+
     // Called just before performing any physics calculations
     // Where physics code will go
     void FixedUpdate()
@@ -24,6 +32,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         // Use Input to apply force to rigidbody of Player
-        // TODO: Continue tut at 7:40
+		Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+		rb.AddForce(movement);
     }
 }
