@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour
 	public float speed;
 
 	private Rigidbody rb;
+	private int count;
 
 	// Called on first frame of script
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> (); // Finds Rigidbody component if present
+		count = 0;
 	}
 
     // Called just before performing any physics calculations
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.CompareTag ("Pick Up"))
 		{
 			other.gameObject.SetActive(false);
+			count++;
 		}
 	}
 }
