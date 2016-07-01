@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     //}
 
 	public float speed;
+	public Text countText;
 
 	private Rigidbody rb;
 	private int count;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody> (); // Finds Rigidbody component if present
 		count = 0;
+		SetCountText();
 	}
 
     // Called just before performing any physics calculations
@@ -46,6 +49,12 @@ public class PlayerController : MonoBehaviour
 		{
 			other.gameObject.SetActive(false);
 			count++;
+			SetCountText();
 		}
+	}
+
+	void SetCountText()
+	{
+		countText.text = "Count: " + count.ToString();
 	}
 }
