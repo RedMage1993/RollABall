@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 		rb = GetComponent<Rigidbody> (); // Finds Rigidbody component if present
 		count = 0;
 		SetCountText();
+		winText.text = "";
 	}
 
     // Called just before performing any physics calculations
