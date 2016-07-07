@@ -31,6 +31,15 @@ public class PlayerController : MonoBehaviour
 		winText.text = "";
 	}
 
+	// Have way to close build
+	public void Update()
+	{
+		if (Input.GetKeyDown (KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
+
     // Called just before performing any physics calculations
     // Where physics code will go
     void FixedUpdate()
